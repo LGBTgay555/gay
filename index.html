@@ -3,310 +3,340 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Đồ Công Nghệ - ANBAO Shop</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>HALO Shop - Đồ Công Nghệ</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    
+    .navbar {
+      background: #111;
     }
-    body {
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      color: #333;
-    }
-    a { text-decoration: none; color: inherit; }
-
-    .header {
-      background: #000;
-      color: #f3f2f2;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 12px 60px;
-    }
-    .header .logo {
+    .navbar-brand {
+      color: #FFD600 !important;
+      font-weight: bold;
       font-size: 28px;
-      font-weight: 700;
-      color: #FFD600;
-      letter-spacing: 2px;
     }
-    .header .search {
-      flex: 1;
-      margin: 0 40px;
-      position: relative;
-    }
-    .header .search input {
-      width: 100%;
-      padding: 8px 40px 8px 15px;
+    .search-box {
+      border-radius: 5px;
       border: none;
-      border-radius: 20px;
-      outline: none;
-      font-size: 14px;
+      padding: 6px 10px;
+      width: 400px;
     }
-    .header .search i {
-      position: absolute;
-      right: 15px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: #888;
-    }
-    .header .hotline {
-      font-size: 14px;
-    }
-    .header .hotline span {
-      color: #FFD600;
-      font-weight: bold;
-    }
-   .nav {
-      background: #f7f7f7;
-      padding: 12px 60px;
-      border-bottom: 1px solid #e5e5e5;
-      display: flex;
-      gap: 25px;
-      font-size: 14px;
-    }
-    .nav a {
-      color: #333;
-      font-weight: 500;
-      transition: 0.2s;
-    }
-    .nav a:hover {
-      color: #FFD600;
+    .search-btn {
+      background: #FFD600;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 5px;
     }
 
-    .breadcrumb {
-      font-size: 13px;
-      padding: 15px 60px;
-      color: #555;
-    }
-    .breadcrumb a { color: #555; }
-    .breadcrumb span {
-      margin: 0 5px;
-    }
-
-    h2.page-title {
-      font-size: 22px;
-      font-weight: 600;
-      margin: 0 60px 20px;
-    }
-
-    .category-wrapper {
-      background: #fff;
-      margin: 0 60px 25px;
-      padding: 20px;
-      border: 1px solid #e5e5e5;
-      border-radius: 6px;
-    }
-    .category-title {
-      font-size: 14px;
-      font-weight: bold;
-      margin-bottom: 15px;
-      text-transform: uppercase;
-    }
-    .category-container {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-    .category-item {
-      flex: 0 0 auto;
-      border: 1px solid #e5e5e5;
-      border-radius: 6px;
-      padding: 15px 25px;
-      text-align: center;
-      cursor: pointer;
-      background-color: #fff;
-      transition: all 0.25s ease;
-      min-width: 130px;
-    }
-    .category-item:hover {
-      border-color: #FFD600;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.05);
-      transform: translateY(-2px);
-    }
-    .category-item i {
-      font-size: 22px;
-      color: #555;
-      margin-bottom: 8px;
-      display: block;
-      transition: 0.25s;
-    }
-    .category-item:hover i {
-      color: #FFD600;
-    }
-    .category-item span {
-      font-size: 14px;
-      font-weight: 500;
-      color: #333;
-    }
-
-    .product-section {
-      margin: 0 60px 40px;
-    }
-    .product-toolbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 20px;
-      font-size: 14px;
-      color: #555;
-    }
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-    }
+    
     .product-card {
-      background: #fff;
-      border: 1px solid #e5e5e5;
-      border-radius: 8px;
-      padding: 15px;
-      text-align: center;
-      transition: all 0.25s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .product-card:hover {
-      border-color: #FFD600;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-      transform: translateY(-3px);
-    }
-    .product-card img {
-      max-width: 100%;
-      height: 160px;
-      object-fit: contain;
-      margin-bottom: 12px;
-    }
-    .product-card h3 {
-      font-size: 15px;
-      font-weight: 500;
-      margin-bottom: 8px;
-      color: #333;
-    }
-    .product-card p {
-      font-size: 14px;
-      color: #d32f2f;
-      font-weight: bold;
+      transform: scale(1.05);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
     }
 
-    @media (max-width: 1024px) {
-      .product-grid { grid-template-columns: repeat(3, 1fr); }
+    
+    .btn-outline-secondary {
+      transition: transform 0.2s ease, background 0.3s ease;
     }
-    @media (max-width: 768px) {
-      .nav { flex-wrap: wrap; }
-      .product-grid { grid-template-columns: repeat(2, 1fr); }
-      .header { flex-wrap: wrap; padding: 15px; }
-      .header .search { margin: 15px 0; }
+    .btn-outline-secondary:hover {
+      transform: scale(1.1);
+      background: #FFD600;
+      color: #000;
+      border-color: #FFD600;
     }
-    @media (max-width: 480px) {
-      .product-grid { grid-template-columns: 1fr; }
+
+    
+    footer {
+      background: #111;
+      color: #fff;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
 
-  <div class="header">
-    <div class="logo">HALO</div>
-    <div class="search">
-      <input type="text" placeholder="Bấm để tìm sản phẩm">
-      <i class="fa fa-search"></i>
-    </div>
-    <div class="hotline">HOTLINE: <span>49534953</span></div>
-  </div>
-
-  <div class="nav">
-    <a href="#">TRANG CHỦ</a>
-    <a href="#">SẢN PHẨM</a>
-    <a href="#">CHỦ ĐỀ GAME</a>
-    <a href="#">CHƯƠNG TRÌNH</a>
-    <a href="#">CỬA HÀNG</a>
-    <a href="#">BẢN TIN</a>
-  </div>
-
-  <div class="breadcrumb">
-    <a href="#">Trang chủ</a> <span>/</span>
-    <a href="#">Sản phẩm</a> <span>/</span>
-    <strong>Đồ Công Nghệ</strong>
-  </div>
-
-  <h2 class="page-title">ĐỒ CÔNG NGHỆ</h2>
-
-  <div class="category-wrapper">
-    <div class="category-title">LOẠI</div>
-    <div class="category-container">
-      <div class="category-item">
-        <i class="fa-solid fa-keyboard"></i>
-        <span>Bàn phím</span>
-      </div>
-      <div class="category-item">
-        <i class="fa-solid fa-computer-mouse"></i>
-        <span>Chuột</span>
-      </div>
-      <div class="category-item">
-        <i class="fa-solid fa-microchip"></i>
-        <span>Switch</span>
-      </div>
-      <div class="category-item">
-        <i class="fa-solid fa-headphones"></i>
-        <span>Tai nghe</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="product-section">
-    <div class="product-toolbar">
-      <div id="result-count">Hiển thị tất cả 0 kết quả</div>
-      <div>Sắp xếp: <b>Mặc định</b></div>
-    </div>
-    <div class="product-grid" id="product-grid"></div>
-  </div>
-
-  <script>
   
-    document.querySelectorAll(".category-item").forEach(item => {
-      item.addEventListener("click", () => {
-        alert("Bạn đã chọn: " + item.innerText);
-      });
-    });
+  <nav class="navbar navbar-expand-lg px-4">
+    <a class="navbar-brand" href="#">HALO</a>
+    <form class="d-flex mx-auto">
+      <input class="search-box" type="text" placeholder="Bấm để tìm sản phẩm">
+      <button class="search-btn" type="submit"><i class="bi bi-search"></i></button>
+    </form>
+    <div class="d-flex align-items-center gap-3">
+      <div class="text-white">
+        <i class="bi bi-telephone"></i> HOTLINE <span class="text-warning">028 7306 8666</span>
+      </div>
+      <a href="#" class="text-white fs-4"><i class="bi bi-cart3"></i></a>
+    </div>
+  </nav>
+
+  
+  <div class="container my-4">
 
    
-    const baseProducts = [
-      { name: "Bàn phím cơ Akko 3098B", price: "36 đ", img: "kb1.webp" },
-      { name: "Chuột Logitech G502 X Plus", price: "36 đ", img: "c1.webp" },
-      { name: "Switch Akko CS", price: "36 đ", img: "sw3.jpg" },
-      { name: "Tai nghe Razer BlackShark V2", price: "36 đ", img: "tn1.jpg" }
-    ];
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
+        <li class="breadcrumb-item"><a href="#">Sản phẩm</a></li>
+        <li class="breadcrumb-item active">Đồ Công Nghệ</li>
+      </ol>
+    </nav>
+
+    <h2 class="fw-bold mb-3">ĐỒ CÔNG NGHỆ</h2>
+
+   
+    <div class="mb-4">
+  <a href="kb.html" class="btn btn-outline-secondary">Bàn phím</a>
+  <a href="c.html" class="btn btn-outline-secondary">Chuột</a>
+  <a href="sw.html" class="btn btn-outline-secondary">Switch</a>
+  <a href="tn.html" class="btn btn-outline-secondary">Tai nghe</a>
+    </div>
 
     
-    const products = [];
-    for (let i = 0; i < 7; i++) {
-      baseProducts.forEach(p => {
-        products.push({
-          ...p,
-          name: p.name + " #" + (i + 1) 
-        });
-      });
-    }
+    <div class="d-flex justify-content-end align-items-center gap-2 mb-4">
+      <label for="show" class="me-2">Show :</label>
+      <select id="show" class="form-select form-select-sm" style="width: 80px;">
+        <option>9</option>
+        <option>12</option>
+        <option selected>18</option>
+        <option>24</option>
+      </select>
+      <select class="form-select form-select-sm">
+        <option selected>Sắp xếp mặc định</option>
+        <option>Giá tăng dần</option>
+        <option>Giá giảm dần</option>
+      </select>
+    </div>
 
-    const grid = document.getElementById("product-grid");
+    
 
-    products.forEach(p => {
-      const card = document.createElement("div");
-      card.className = "product-card";
-      card.innerHTML = `
-        <img src="${p.img}" alt="${p.name}">
-        <h3>${p.name}</h3>
-        <p>${p.price}</p>
-      `;
-      grid.appendChild(card);
-    });
 
-    document.getElementById("result-count").innerText =
-      "Hiển thị tất cả " + products.length + " kết quả";
-  </script>
+  
+  
+<div class="row g-4">
 
-</body>
-</html>
+  
+  <div class="col-md-3">
+    <div class="card product-card h-100">
+      <img src="chuot/c1.webp" class="card-img-top" alt="Chuột 1">
+      <div class="card-body text-center">
+        <h6 class="card-title">Chuột Gaming C1</h6>
+        <p class="text-danger fw-bold">1,200,000 đ</p>
+      </div>
+    </div>
+  </div>
 
+  <div class="col-md-3">
+    <div class="card product-card h-100">
+      <img src="chuot/c2.webp" class="card-img-top" alt="Chuột 2">
+      <div class="card-body text-center">
+        <h6 class="card-title">Chuột Gaming C2</h6>
+        <p class="text-danger fw-bold">1,350,000 đ</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="card product-card h-100">
+      <img src="chuot/c3.webp" class="card-img-top" alt="Chuột 3">
+      <div class="card-body text-center">
+        <h6 class="card-title">Chuột Gaming C3</h6>
+        <p class="text-danger fw-bold">1,500,000 đ</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="card product-card h-100">
+      <img src="chuot/c4.webp" class="card-img-top" alt="Chuột 4">
+      <div class="card-body text-center">
+        <h6 class="card-title">Chuột Gaming C4</h6>
+        <p class="text-danger fw-bold">1,700,000 đ</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="card product-card h-100">
+      <img src="chuot/c5.webp" class="card-img-top" alt="Chuột 5">
+      <div class="card-body text-center">
+        <h6 class="card-title">Chuột Gaming C5</h6>
+        <p class="text-danger fw-bold">1,900,000 đ</p>
+      </div>
+    </div>
+  </div>
+
+ 
+  <div class="col-md-3">
+    <div class="card product-card h-100">
+      <img src="keyboard/kb1.webp" class="card-img-top" alt="Keyboard 1">
+      <div class="card-body text-center">
+        <h6 class="card-title">Bàn phím cơ KB1</h6>
+        <p class="text-danger fw-bold">2,000,000 đ</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="card product-card h-100">
+      <img src="keyboard/kb2.webp" class="card-img-top" alt="Keyboard 2">
+      <div class="card-body text-center">
+        <h6 class="card-title">Bàn phím cơ KB2</h6>
+        <p class="text-danger fw-bold">2,200,000 đ</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="card product-card h-100">
+      <img src="keyboard/kb3.webp" class="card-img-top" alt="Keyboard 3">
+      <div class="card-body text-center">
+        <h6 class="card-title">Bàn phím cơ KB3</h6>
+        <p class="text-danger fw-bold">2,400,000 đ</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="card product-card h-100">
+      <img src="keyboard/kb4.webp" class="card-img-top" alt="Keyboard 4">
+      <div class="card-body text-center">
+        <h6 class="card-title">Bàn phím cơ KB4</h6>
+        <p class="text-danger fw-bold">2,600,000 đ</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="card product-card h-100">
+      <img src="keyboard/kb5.webp" class="card-img-top" alt="Keyboard 5">
+      <div class="card-body text-center">
+        <h6 class="card-title">Bàn phím cơ KB5</h6>
+        <p class="text-danger fw-bold">2,800,000 đ</p>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="col-md-3">
+    <div class="card product-card h-100">
+      <img src="switch/sw1.jpg" class="card-img-top" alt="Switch 1">
+      <div class="card-body text-center">
+        <h6 class="card-title">Switch SW1</h6>
+        <p class="text-danger fw-bold">300,000 đ</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="card product-card h-100">
+      <img src="switch/sw2.jpg" class="card-img-top" alt="Switch 2">
+      <div class="card-body text-center">
+        <h6 class="card-title">Switch SW2</h6>
+        <p class="text-danger fw-bold">350,000 đ</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="card product-card h-100">
+      <img src="switch/sw3.jpg" class="card-img-top" alt="Switch 3">
+      <div class="card-body text-center">
+        <h6 class="card-title">Switch SW3</h6>
+        <p class="text-danger fw-bold">400,000 đ</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="card product-card h-100">
+      <img src="switch/sw4.jpg" class="card-img-top" alt="Switch 4">
+      <div class="card-body text-center">
+        <h6 class="card-title">Switch SW4</h6>
+        <p class="text-danger fw-bold">450,000 đ</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="card product-card h-100">
+      <img src="switch/sw5.jpg" class="card-img-top" alt="Switch 5">
+      <div class="card-body text-center">
+        <h6 class="card-title">Switch SW5</h6>
+        <p class="text-danger fw-bold">500,000 đ</p>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="col-md-3">
+    <div class="card product-card h-100">
+      <img src="tainghe/tn1.jpg" class="card-img-top" alt="Tai nghe 1">
+      <div class="card-body text-center">
+        <h6 class="card-title">Tai nghe TN1</h6>
+        <p class="text-danger fw-bold">1,000,000 đ</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="card product-card h-100">
+      <img src="tainghe/tn2.png" class="card-img-top" alt="Tai nghe 2">
+      <div class="card-body text-center">
+        <h6 class="card-title">Tai nghe TN2</h6>
+        <p class="text-danger fw-bold">1,200,000 đ</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="card product-card h-100">
+      <img src="tainghe/tn3.png" class="card-img-top" alt="Tai nghe 3">
+      <div class="card-body text-center">
+        <h6 class="card-title">Tai nghe TN3</h6>
+        <p class="text-danger fw-bold">1,400,000 đ</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="card product-card h-100">
+      <img src="tainghe/tn4.png" class="card-img-top" alt="Tai nghe 4">
+      <div class="card-body text-center">
+        <h6 class="card-title">Tai nghe TN4</h6>
+        <p class="text-danger fw-bold">1,600,000 đ</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="card product-card h-100">
+      <img src="tainghe/tn5.png" class="card-img-top" alt="Tai nghe 5">
+      <div class="card-body text-center">
+        <h6 class="card-title">Tai nghe TN5</h6>
+        <p class="text-danger fw-bold">1,800,000 đ</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</div>
 
      
+    </div>
+  </div>
+
+  <footer>
+    © 2025 HALO Shop - Đồ Công Nghệ
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
