@@ -251,19 +251,51 @@
 <div class="modal fade" id="introModal" tabindex="-1">
   <div class="modal-dialog modal-lg modal-dialog-centered">
     <div class="modal-content">
+
       <div class="modal-header">
         <h5 class="modal-title">Video giới thiệu Trường THCS Long Hưng</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
+
       <div class="modal-body">
-        <video width="100%" controls>
-          <source src="video/helo.mp4" type="video/mp4">
-          Trình duyệt không hỗ trợ video.
-        </video>
+        <div class="ratio ratio-16x9">
+          <iframe
+            id="youtubeVideo"
+            src=""
+            title="Video giới thiệu"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
       </div>
+
     </div>
   </div>
 </div>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var modal = new bootstrap.Modal(document.getElementById('introModal'));
+    var iframe = document.getElementById('youtubeVideo');
+
+   
+    modal.show();
+
+    
+    document.getElementById('introModal').addEventListener('shown.bs.modal', function () {
+      iframe.src = "https://www.youtube.com/embed/GF5bS2rZkSI?autoplay=1&mute=1";
+    });
+
+   
+    document.getElementById('introModal').addEventListener('hidden.bs.modal', function () {
+      iframe.src = "";
+    });
+  });
+</script>
+
+
+
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
